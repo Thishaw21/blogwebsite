@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    a {
+        color: black;
+
+    }
+
+    a:hover {
+        color: rgb(235, 11, 26);
+    }
+</style>
+<div class="container">
+    <h2>Summary History of "<i>{{ user.username }}</i>"</h2>
+    {% for s in data %}
+    <li>
+        <a href="history_topic?topic={{ s.original_link }}&body={{ s.body }}">{{ s.original_link }}</a>
+    </li>
+    <hr>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

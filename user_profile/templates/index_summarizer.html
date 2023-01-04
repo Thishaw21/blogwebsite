@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row left-container">
+        <div>
+        </div>
+        <div>
+            <h3>Automatic Vietnamese News Summarization</h3>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            {% if original_text %}
+            <h3>Original Text</h3>
+            {{ original_text }}
+            {% else %}
+            {% include "input_text.html" %}
+            {% endif %}
+        </div>
+
+        <div class="col-sm-6">
+            {% include "result.html" %}
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
